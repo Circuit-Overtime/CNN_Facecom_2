@@ -17,4 +17,4 @@
     - Recall: 96.53%
     - F1-Score: 96.84%
 
-> See [TaskATrainingLogs.txt](TaskATrainingLogs.txt).
+> See [TaskATrainingLogs.txt](TrainingLogs/TaskATrainingLogs.txt).
