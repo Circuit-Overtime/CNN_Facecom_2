@@ -1,5 +1,3 @@
-// Results Summary for Task A: Gender Classification (VGG19)
-
 ## 📊 Training & Validation Results
 
 | Phase      | Accuracy | Precision | Recall  | F1-Score |
