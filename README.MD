@@ -4,49 +4,50 @@ This guide explains how to set up and run the **Gender Classification** (Task A)
 
 ---
 
+## 1. Setup Environment (via Docker 🐳)
 
-# 1. Setup Environment 
+The easiest way to run the models is by using our pre-configured Docker container with a built-in Python 3.10 virtual environment (`tf-gpu-env`). This setup ensures full compatibility with TensorFlow-GPU and all dependencies — without needing to install anything manually.
 
-## 🧬 Conda Environment (Recommended)
+> 🧠 Tested on:  
+> - ✅ Windows 11 + Docker Desktop + WSL2  
+> - ✅ Ubuntu 22.04 (x86_64 AMD CPU, with NVIDIA GPU)  
+> - ✅ macOS (M1/M2 not recommended unless using CPU-only)
 
-For guaranteed reproducibility across systems, we provide a ready-to-use Conda environment file directly in this repository.
+> ⏳ **Time to setup:** ~30 minutes (with 22 Mbps internet)
+### 🛠️ Requirements
 
-### 🔧 Setup Instructions (CPU/GPU Compatible)
+- [Docker Desktop](https://www.docker.com/products/docker-desktop) (or native Docker Engine on Linux)
+  - ✅ **WSL2 backend enabled** (for Windows)
+  - ✅ **GPU support enabled** (if using TensorFlow-GPU)
+- Internet connection ≥ **22 Mbps** (see time note below)
+- GPU drivers installed:
+  - NVIDIA Driver (≥ R515+)
+  - NVIDIA Container Toolkit (for GPU access inside Docker)
 
-1. **Install [Miniconda](https://docs.conda.io/en/latest/miniconda.html)**
 
-   - ✅ During installation, **check the box to add Conda to your PATH**.
-   - ✅ After installing, open a new terminal and run:
-     ```bash
-     conda init powershell  # or conda init bash/zsh depending on your shell
-     ```
-   - ✅ Restart the terminal to apply changes. (close and open the same terminal again)
+### ⚡ Setup Steps
 
-2. **Create the Conda environment from the included YAML file**:
-   ```bash
-   conda env create -f facecom_env.yml
-   ```
+> 🧪 This script builds the Docker image, installs all Python dependencies inside a virtualenv, downloads pretrained models, and extracts everything to your host.
 
-3. **Activate the Environment**
-    ```bash
-    conda activate facecom
-    ```
+```bash
+# Clone the repo
+git clone https://github.com/Circuit-Overtime/CNN_Facecom_2.git
+cd CNN_Facecom_2
 
-4. **Run inference For Gender Prediction**:
-    ```bash
-    python PRODUCTION/Task_A/inference/inference_vgg19_updated.py
-    ```
-5. **Run inference For Face Classification**:
-    ```bash
-    python PRODUCTION/Task_B/inference/verify_face.py
-    ```
-6. **Deactivate the Environment**
-    ```bash
-    conda deactivate
-    ```
+# 🖥️ If you're on Windows with WSL2:
+wsl bash install.sh
 
+# 🐧 If you're on native Linux/macOS:
+bash install.sh
+
+# ✅ Activate the virtual environment
+source tf-gpu-env/bin/activate
+
+# ▶️ Run the test scripts
+python testA.py   # Gender Classification
+python testB.py   # Face Verification
+```
 ---
-
 
 
 ## 2. Download Pretrained Models

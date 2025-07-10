@@ -1,2 +1,4 @@
 *.h5
 *.env
+models/
+tf-gpu-env/
