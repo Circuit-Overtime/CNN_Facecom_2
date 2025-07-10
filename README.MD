@@ -50,7 +50,8 @@ python testB.py   # Face Verification
 ---
 
 
-## 2. Download Pretrained Models
+## 2. Download Pretrained Models (Exclusive Download if you want)
+> (Don't worry docker will do it by itself no need to do this manually)
 
 - **Task A (Gender Classification):**  
     Download `TASK_A.h5` from [releases](https://github.com/Circuit-Overtime/CNN_Facecom_2/releases/tag/publish102) and place it in the `models/` directory.
@@ -64,12 +65,12 @@ python testB.py   # Face Verification
 
 - **Task A:**  
     - Place validation/test images in:
-        - `E:\CNN_vedic\Data\Task_A\val\male\`
-        - `E:\CNN_vedic\Data\Task_A\val\female\`
+        - `E:\CNN_Facecom_2\Data\Task_A\val\male\`
+        - `E:\CNN_Facecom_2\Data\Task_A\val\female\`
 
 - **Task B:**  
     - Place validation/test folders in:
-        - `E:\CNN_vedic\Data\Task_B\val\`
+        - `E:\CNN_Facecom_2\Data\Task_B\val\`
     - Each identity folder should contain one or many reference image and a `distortion/` subfolder with distorted images.
 
 ---
