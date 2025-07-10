@@ -22,3 +22,7 @@ docker rm $CONTAINER_NAME
 
 echo "[✅] Done. Activate your venv with:"
 echo "     source tf-gpu-env/bin/activate"
+echo "[✅] Run your tests with:"
+echo "     python testA.py"
+echo "     python testB.py"
+
